@@ -7,9 +7,6 @@
   align-items: center;
 }
 
-.contactSection {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 40%;
+.nameHeader {
+  margin-bottom: 0px;
 }

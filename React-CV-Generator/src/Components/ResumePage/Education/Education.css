@@ -1,0 +1,8 @@
+.educationSection {
+  width: 100%;
+}
+
+.educationInfo {
+  display: flex;
+  flex-direction: row;
+}
