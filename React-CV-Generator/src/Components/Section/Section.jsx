@@ -6,8 +6,7 @@ const Section = () => {
     <>
       <div className="section">hi</div>
       <div className="section">hi</div>
-      <div className="section">
-        hi
+      <div className="section resumePage">
         <ResumePage />
       </div>
     </>

@@ -1,0 +1,6 @@
+.pageBody {
+  height: 75vh;
+  width: 45vw;
+  background-color: white;
+  box-shadow: 0px 0px 25px 10px lightgrey;
+}
