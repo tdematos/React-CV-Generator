@@ -1,22 +1,18 @@
+import EdExperience from "../Experience/EdExperience";
 import "../Education/Education.css";
 
-const Education = () => {
+const Education = (props) => {
   return (
     <div className="educationSection">
       <div className="titleBackground">
-        <h2 className="educationTitle">Education</h2>
+        <h2 className="educationTitle">{props.eTitle}</h2>
       </div>
-
-      <div className="educationInfo">
-        <div className="dateAndPlace">
-          <p className="schoolDate">01/21 - 01/22</p>
-          <p className="schoolLocation">Boston, MA</p>
-        </div>
-        <div className="schoolInfo">
-          <p className="schoolName">Harvard University</p>
-          <p className="degreeName">Computer Science</p>
-        </div>
-      </div>
+      <EdExperience
+        schoolDate="01/21 - 01/22"
+        schoolLocation="Boston, MA"
+        schoolName="Harvard University"
+        degreeName="Computer Science"
+      />
     </div>
   );
 };
