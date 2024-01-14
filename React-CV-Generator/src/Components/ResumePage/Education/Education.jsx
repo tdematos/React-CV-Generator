@@ -1,11 +1,12 @@
 import EdExperience from "../Experience/EdExperience";
+import Title from "../Title/Title";
 import "../Education/Education.css";
 
-const Education = (props) => {
+const Education = () => {
   return (
     <div className="educationSection">
       <div className="titleBackground">
-        <h2 className="educationTitle">{props.eTitle}</h2>
+        <Title sectionTitle="Education" />
       </div>
       <EdExperience
         schoolDate="01/21 - 01/22"

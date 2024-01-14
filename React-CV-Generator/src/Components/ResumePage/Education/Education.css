@@ -12,14 +12,6 @@
   justify-content: space-between;
 }
 
-.educationTitle {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  background-color: lightblue;
-  width: 75%;
-}
-
 .titleBackground {
   display: flex;
   flex-direction: row;
