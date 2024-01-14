@@ -3,7 +3,10 @@ import "../Education/Education.css";
 const Education = () => {
   return (
     <div className="educationSection">
-      <h2 className="educationTitle">Education</h2>
+      <div className="titleBackground">
+        <h2 className="educationTitle">Education</h2>
+      </div>
+
       <div className="educationInfo">
         <div className="dateAndPlace">
           <p className="schoolDate">01/21 - 01/22</p>

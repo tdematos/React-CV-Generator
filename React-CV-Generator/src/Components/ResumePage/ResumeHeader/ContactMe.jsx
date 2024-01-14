@@ -1,11 +1,11 @@
 import "../ResumeHeader/Contact.css";
 
-const ContactMe = () => {
+const ContactMe = (props) => {
   return (
     <div className="contactSection">
-      <p className="email">enter@email.com</p>
-      <p className="phone">111.111.1111</p>
-      <p className="location">London, UK</p>
+      <p className="email">{props.email}</p>
+      <p className="phone">{props.phone}</p>
+      <p className="location">{props.location}</p>
     </div>
   );
 };
