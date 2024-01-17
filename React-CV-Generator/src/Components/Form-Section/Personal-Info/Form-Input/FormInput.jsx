@@ -1,10 +1,10 @@
 import "../Form-Input/FormInput.css";
 
-const FormInput = (props) => {
+const FormInput = ({ fullName, onChange }) => {
   return (
     <div className="inputContainer">
-      <label for="fullName">{props.fullName}</label>
-      <input className="InputBox" type="text" />
+      <label for="fullName">{fullName}</label>
+      <input className="InputBox" type="text" onChange={onChange} />
     </div>
   );
 };
