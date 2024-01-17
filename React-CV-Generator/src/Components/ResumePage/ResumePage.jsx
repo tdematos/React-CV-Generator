@@ -4,11 +4,10 @@ import Experience from "./Experience/EdExperience";
 import WorkExperience from "./Work Experience/WorkExperiece";
 import "../ResumePage/ResumePage.css";
 
-const ResumePage = ({ fullName, onChange }) => {
+const ResumePage = ({ fullName }) => {
   return (
     <div className="pageBody">
       <ResumeHeader
-        onChange={onChange}
         resumeHeader={fullName}
         email="name@email.com"
         number="111.111.1111"

@@ -6,16 +6,16 @@ import "../Section/Section.css";
 const Section = () => {
   const [enterName, setEnterName] = useState("Enter full name");
 
-  const handleChange = (e) => {
-    console.log(e.target.value);
-    setEnterName(e.target.value);
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    setEnterName(event.target.value);
   };
 
   return (
     <>
       <div className="section">hi</div>
       <div className="section formSection">
-        <FormSection />
+        <FormSection onChange={handleChange} />
       </div>
       <div className="section resumePage">
         <ResumePage onChange={handleChange} fullName={enterName} />
