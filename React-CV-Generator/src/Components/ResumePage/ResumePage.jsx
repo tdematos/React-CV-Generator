@@ -4,12 +4,12 @@ import Experience from "./Experience/EdExperience";
 import WorkExperience from "./Work Experience/WorkExperiece";
 import "../ResumePage/ResumePage.css";
 
-const ResumePage = ({ fullName }) => {
+const ResumePage = ({ fullName, email }) => {
   return (
     <div className="pageBody">
       <ResumeHeader
         resumeHeader={fullName}
-        email="name@email.com"
+        email={email}
         number="111.111.1111"
         location="London, UK"
       />
