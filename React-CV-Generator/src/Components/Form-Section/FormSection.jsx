@@ -1,8 +1,18 @@
 import PersonalInfo from "./Personal-Info/PersonalInfo";
 
-const FormSection = ({ onNameChange, onEmailChange }) => {
+const FormSection = ({
+  onNameChange,
+  onEmailChange,
+  onPhoneChange,
+  onLocationChange,
+}) => {
   return (
-    <PersonalInfo onNameChange={onNameChange} onEmailChange={onEmailChange} />
+    <PersonalInfo
+      onNameChange={onNameChange}
+      onEmailChange={onEmailChange}
+      onPhoneChange={onPhoneChange}
+      onLocationChange={onLocationChange}
+    />
   );
 };
 
