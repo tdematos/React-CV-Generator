@@ -1,4 +1,5 @@
 import PersonalInfo from "./Personal-Info/PersonalInfo";
+import EducationSection from "./Education/EducationSection";
 
 const FormSection = ({
   onNameChange,
@@ -7,12 +8,15 @@ const FormSection = ({
   onLocationChange,
 }) => {
   return (
-    <PersonalInfo
-      onNameChange={onNameChange}
-      onEmailChange={onEmailChange}
-      onPhoneChange={onPhoneChange}
-      onLocationChange={onLocationChange}
-    />
+    <>
+      <PersonalInfo
+        onNameChange={onNameChange}
+        onEmailChange={onEmailChange}
+        onPhoneChange={onPhoneChange}
+        onLocationChange={onLocationChange}
+      />
+      <EducationSection />
+    </>
   );
 };
 
