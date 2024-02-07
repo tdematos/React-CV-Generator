@@ -9,6 +9,12 @@ const Section = () => {
   const [phoneNumInput, setPhoneNumInput] = useState("111.222.3333");
   const [locationAdd, setlocationAdd] = useState("London, Uk");
 
+  const [schoolInput, setSchoolInput] = useState("Harvard");
+  const [degreeInput, setDegreeInput] = useState("Computer Science");
+  const [startDate, setStartDate] = useState("01/21");
+  const [endDate, setEndDate] = useState("12/01");
+  const [schoolLocation, setSchoolLocation] = useState("Cambridge, MA");
+
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
   };
@@ -22,6 +28,26 @@ const Section = () => {
   };
   const handlelocationChange = (e) => {
     setlocationAdd(e.target.value);
+  };
+  //functions for handling change to eduction section
+  const handleSchoolNameChange = (e) => {
+    setSchoolInput(e.target.value);
+  };
+
+  const handleDegreeChange = (e) => {
+    setDegreeInput(e.target.value);
+  };
+
+  const handleStartDateChange = (e) => {
+    setStartDate(e.target.value);
+  };
+
+  const handleEndDateChange = (e) => {
+    setEndDate(e.target.value);
+  };
+
+  const handleSchoolLocation = (e) => {
+    setSchoolLocation(e.target.value);
   };
 
   return (
@@ -43,6 +69,12 @@ const Section = () => {
           email={emailInput}
           phoneNum={phoneNumInput}
           location={locationAdd}
+          //input for education section in resume
+          startDate={startDate}
+          endDate={endDate}
+          schoolLocation={schoolLocation}
+          schoolName={schoolInput}
+          degree={degreeInput}
         />
       </div>
     </>

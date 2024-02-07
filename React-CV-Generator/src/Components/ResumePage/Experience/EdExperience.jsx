@@ -3,7 +3,8 @@ const EdExperience = (props) => {
     <div>
       <div className="educationInfo">
         <div className="dateAndPlace">
-          <p className="schoolDate">{props.schoolDate}</p>
+          <p className="schoolDate">{props.startDate}</p>
+          <p className="schoolDate">{props.endDate}</p>
           <p className="schoolLocation">{props.schoolLocation}</p>
         </div>
         <div className="schoolInfo">

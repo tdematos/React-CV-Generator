@@ -4,16 +4,22 @@ import Experience from "./Experience/EdExperience";
 import WorkExperience from "./Work Experience/WorkExperiece";
 import "../ResumePage/ResumePage.css";
 
-const ResumePage = ({ fullName, email, phoneNum, location }) => {
+const ResumePage = (props) => {
   return (
     <div className="pageBody">
       <ResumeHeader
-        resumeHeader={fullName}
-        email={email}
-        number={phoneNum}
-        location={location}
+        resumeHeader={props.fullName}
+        email={props.email}
+        number={props.phoneNum}
+        location={props.location}
       />
-      <Education />
+      <Education
+        startDate={props.startDate}
+        endDate={props.endDate}
+        schoolLocation={props.schoolLocation}
+        schoolName={props.schoolName}
+        degree={props.degree}
+      />
       <Experience />
       <WorkExperience />
     </div>
