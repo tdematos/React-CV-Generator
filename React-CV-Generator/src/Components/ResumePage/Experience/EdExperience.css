@@ -1,0 +1,9 @@
+.dateContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.degreeName {
+  position: relative;
+  top: 16px;
+}
