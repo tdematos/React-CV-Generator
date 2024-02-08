@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormInput from "../Personal-Info/Form-Input/FormInput";
 import "../Personal-Info/boxInfo.css";
 
-const EducationSection = () => {
+const EducationSection = (props) => {
   const [toggleEdMenu, setToggleEdMenu] = useState(true);
 
   function handleClick() {
@@ -31,11 +31,20 @@ const EducationSection = () => {
 
       {!toggleEdMenu ? (
         <form className="boxInfoForm">
-          <FormInput fullNameTitle="School" />
-          <FormInput fullNameTitle="Degree" />
-          <FormInput fullNameTitle="Start Date" />
-          <FormInput fullNameTitle="End Date" />
-          <FormInput fullNameTitle="Location" />
+          <FormInput fullNameTitle="School" onChange={props.onSchoolChange} />
+          <FormInput fullNameTitle="Degree" onChange={props.onDegreeChange} />
+          <FormInput
+            fullNameTitle="Start Date"
+            onChange={props.onStartDateChange}
+          />
+          <FormInput
+            fullNameTitle="End Date"
+            onChange={props.onEndDateChange}
+          />
+          <FormInput
+            fullNameTitle="Location"
+            onChange={props.onSchoolLocationChange}
+          />
         </form>
       ) : null}
     </div>

@@ -1,21 +1,24 @@
 import PersonalInfo from "./Personal-Info/PersonalInfo";
 import EducationSection from "./Education/EducationSection";
+import JobExperience from "./JobExperience/JobExperience";
 
-const FormSection = ({
-  onNameChange,
-  onEmailChange,
-  onPhoneChange,
-  onLocationChange,
-}) => {
+const FormSection = (props) => {
   return (
     <>
       <PersonalInfo
-        onNameChange={onNameChange}
-        onEmailChange={onEmailChange}
-        onPhoneChange={onPhoneChange}
-        onLocationChange={onLocationChange}
+        onNameChange={props.onNameChange}
+        onEmailChange={props.onEmailChange}
+        onPhoneChange={props.onPhoneChange}
+        onLocationChange={props.onLocationChange}
       />
-      <EducationSection />
+      <EducationSection
+        onSchoolChange={props.onSchoolChange}
+        onDegreeChange={props.onDegreeChange}
+        onStartDateChange={props.onStartDateChange}
+        onEndDateChange={props.onEndDateChange}
+        onSchoolLocationChange={props.onSchoolLocationChange}
+      />
+      <JobExperience />
     </>
   );
 };

@@ -59,12 +59,16 @@ const Section = () => {
           onEmailChange={handleEmailChange}
           onPhoneChange={handlePhoneNumChange}
           onLocationChange={handlelocationChange}
+          //functions for handling education input
+          onSchoolChange={handleSchoolNameChange}
+          onDegreeChange={handleDegreeChange}
+          onStartDateChange={handleStartDateChange}
+          onEndDateChange={handleEndDateChange}
+          onSchoolLocationChange={handleSchoolLocation}
         />
       </div>
       <div className="section resumePage">
         <ResumePage
-          onNameChange={handleNameChange}
-          onEmailChange={handleEmailChange}
           fullName={nameInput}
           email={emailInput}
           phoneNum={phoneNumInput}
