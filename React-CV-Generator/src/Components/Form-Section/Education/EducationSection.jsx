@@ -17,7 +17,11 @@ const EducationSection = () => {
   }
 
   return (
-    <div className="boxInfoContainertwo">
+    <div
+      className={
+        toggleEdMenu ? "boxInfoContainertwo-closed" : "boxInfoContainertwo"
+      }
+    >
       <div className="edHeadingContainer">
         <h2 className="boxHeading">Education</h2>
         <p onClick={handleClick} className="menuToggle">
