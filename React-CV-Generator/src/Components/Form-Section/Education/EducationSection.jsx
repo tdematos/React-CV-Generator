@@ -9,17 +9,15 @@ const EducationSection = (props) => {
   function handleClick() {
     if (toggleEdMenu) {
       setToggleEdMenu(false);
-      console.log(toggle);
     } else {
       setToggleEdMenu(true);
-      console.log(toggle);
     }
   }
 
   return (
     <div
       className={
-        toggleEdMenu ? "boxInfoContainertwo-closed" : "boxInfoContainertwo"
+        toggleEdMenu ? "boxInfoContainertwo-closed" : "boxInfoContainer-Exp"
       }
     >
       <div className="edHeadingContainer">
