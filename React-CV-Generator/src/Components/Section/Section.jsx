@@ -67,11 +67,11 @@ const Section = () => {
     setWorkTitle(e.target.value);
   };
 
-  const handleWorkStartDateChange = (e) => {
+  const handleWorkSDateChange = (e) => {
     setWStartDate(e.target.value);
   };
 
-  const handleWorkEndDateChange = (e) => {
+  const handleWorkEDateChange = (e) => {
     setWEndDate(e.target.value);
   };
 
@@ -98,6 +98,13 @@ const Section = () => {
           onStartDateChange={handleStartDateChange}
           onEndDateChange={handleEndDateChange}
           onSchoolLocationChange={handleSchoolLocation}
+          //functions for hanfling work experience section
+          onWorkSDateChange={handleWorkSDateChange}
+          onWorkEDayChange={handleWorkEDateChange}
+          onWOrkLocationChange={handleWorkLocationChange}
+          onCompanyNameChange={handleWorkNameChange}
+          onJobTitleChange={handleJobTitleChange}
+          onJobDescriptionChange={handleJobDescriptionChange}
         />
       </div>
       <div className="section resumePage">

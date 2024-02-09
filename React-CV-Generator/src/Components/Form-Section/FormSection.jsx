@@ -18,7 +18,14 @@ const FormSection = (props) => {
         onEndDateChange={props.onEndDateChange}
         onSchoolLocationChange={props.onSchoolLocationChange}
       />
-      <JobExperience />
+      <JobExperience
+        onCompanyNameChange={props.onCompanyNameChange}
+        onJobTitleChange={props.onJobTitleChange}
+        onWorkSDateChange={props.onWorkSDateChange}
+        onWorkEDayChange={props.onWorkEDayChange}
+        onWOrkLocationChange={props.onWOrkLocationChange}
+        onJobDescriptionChange={props.onJobDescriptionChange}
+      />
     </>
   );
 };

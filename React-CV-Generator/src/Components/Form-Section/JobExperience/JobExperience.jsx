@@ -2,10 +2,10 @@ import "../Personal-Info/boxInfo.css";
 import FormInput from "../Personal-Info/Form-Input/FormInput";
 import { useState } from "react";
 
-const JobExperience = () => {
+const JobExperience = (props) => {
   const [toggleEdMenu, setToggleEdMenu] = useState(true);
 
-  function handleClick() {
+  function handleClick(props) {
     if (toggleEdMenu) {
       setToggleEdMenu(false);
     } else {
@@ -28,11 +28,25 @@ const JobExperience = () => {
 
       {toggleEdMenu ? (
         <form className="boxInfoForm">
-          <FormInput fullNameTitle="Company Name" />
-          <FormInput fullNameTitle="Title" />
-          <FormInput fullNameTitle="Start Date" />
-          <FormInput fullNameTitle="End Date" />
-          <FormInput fullNameTitle="Location" />
+          <FormInput
+            fullNameTitle="Company Name"
+            onChange={props.onCompanyNameChange}
+          />
+          <FormInput fullNameTitle="Title" onChange={props.onJobTitleChange} />
+          <FormInput
+            fullNameTitle="Start Date"
+            onChange={props.onWorkSDateChange}
+          />
+          <FormInput
+            fullNameTitle="End Date"
+            onChange={props.onWorkEDayChange}
+          />
+          <FormInput
+            fullNameTitle="Location"
+            onChange={props.onWOrkLocationChange}
+          />
+
+          {/* onJobDescriptionChange={props.onJobDescriptionChange} */}
         </form>
       ) : null}
     </div>
