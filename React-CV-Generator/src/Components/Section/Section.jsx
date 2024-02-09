@@ -8,12 +8,21 @@ const Section = () => {
   const [emailInput, setEmailInput] = useState("name@email.com");
   const [phoneNumInput, setPhoneNumInput] = useState("111.222.3333");
   const [locationAdd, setlocationAdd] = useState("London, Uk");
-
+  //useState for education section
   const [schoolInput, setSchoolInput] = useState("Harvard");
   const [degreeInput, setDegreeInput] = useState("Computer Science");
   const [startDate, setStartDate] = useState("01/21");
   const [endDate, setEndDate] = useState("12/01");
   const [schoolLocation, setSchoolLocation] = useState("Cambridge, MA");
+  //useState for work section
+  const [wStartDate, setWStartDate] = useState("1/23");
+  const [wEndDate, setWEndDate] = useState("12/23");
+  const [wLocation, setWLocation] = useState("Boston, MA");
+  const [jobName, setJobName] = useState("Google");
+  const [workTitle, setWorkTitle] = useState("Software Engineer");
+  const [workDescription, setWorkDescription] = useState(
+    "Hello this is where I work."
+  );
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -49,6 +58,30 @@ const Section = () => {
   const handleSchoolLocation = (e) => {
     setSchoolLocation(e.target.value);
   };
+  //functions for setting handling input for work seciton
+  const handleWorkNameChange = (e) => {
+    setJobName(e.target.value);
+  };
+
+  const handleJobTitleChange = (e) => {
+    setWorkTitle(e.target.value);
+  };
+
+  const handleWorkStartDateChange = (e) => {
+    setWStartDate(e.target.value);
+  };
+
+  const handleWorkEndDateChange = (e) => {
+    setWEndDate(e.target.value);
+  };
+
+  const handleWorkLocationChange = (e) => {
+    setWLocation(e.target.value);
+  };
+
+  const handleJobDescriptionChange = (e) => {
+    setWorkDescription(e.target.value);
+  };
 
   return (
     <>
@@ -79,6 +112,13 @@ const Section = () => {
           schoolLocation={schoolLocation}
           schoolName={schoolInput}
           degree={degreeInput}
+          //imput for work experience
+          workStartDate={wStartDate}
+          workEndDate={wEndDate}
+          workLocation={wLocation}
+          companyName={jobName}
+          jobTitle={workTitle}
+          jobDescription={workDescription}
         />
       </div>
     </>

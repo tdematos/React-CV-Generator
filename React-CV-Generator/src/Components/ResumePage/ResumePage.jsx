@@ -21,7 +21,14 @@ const ResumePage = (props) => {
         degree={props.degree}
       />
       <Experience />
-      <WorkExperience />
+      <WorkExperience
+        workStartDate={props.workStartDate}
+        workEndDate={props.workEndDate}
+        workLocation={props.workLocation}
+        companyName={props.companyName}
+        jobTitle={props.jobTitle}
+        jobDescription={props.jobDescription}
+      />
     </div>
   );
 };
