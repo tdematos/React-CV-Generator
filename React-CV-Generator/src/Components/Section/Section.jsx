@@ -48,7 +48,7 @@ const Section = () => {
   };
 
   const handleStartDateChange = (e) => {
-    setStartDate(e.target.value);
+    setStartDate(e.target.value + " - ");
   };
 
   const handleEndDateChange = (e) => {
@@ -68,7 +68,7 @@ const Section = () => {
   };
 
   const handleWorkSDateChange = (e) => {
-    setWStartDate(e.target.value);
+    setWStartDate(e.target.value + " - ");
   };
 
   const handleWorkEDateChange = (e) => {
