@@ -1,6 +1,7 @@
 import "../Personal-Info/boxInfo.css";
 import FormInput from "../Personal-Info/Form-Input/FormInput";
 import { useState } from "react";
+import JobDesc from "./JobDesc";
 
 const JobExperience = (props) => {
   const [toggleEdMenu, setToggleEdMenu] = useState(true);
@@ -45,8 +46,10 @@ const JobExperience = (props) => {
             fullNameTitle="Location"
             onChange={props.onWOrkLocationChange}
           />
-
-          {/* onJobDescriptionChange={props.onJobDescriptionChange} */}
+          <JobDesc
+            descriptionTitle="Job Description"
+            onChange={props.onJobDescriptionChange}
+          />
         </form>
       ) : null}
     </div>

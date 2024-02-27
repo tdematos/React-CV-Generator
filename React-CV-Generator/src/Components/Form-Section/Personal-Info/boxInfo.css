@@ -65,15 +65,21 @@
   cursor: pointer;
   color: lightgray;
 }
-
+/* work experience box */
 .boxInfoContainer-Exp {
   background-color: white;
   width: 350px;
-  height: 400px;
+  height: 470px;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+}
+
+.descriptionBox {
+  width: 80%;
+  border-radius: 10px;
+  background-color: rgb(234, 234, 234);
 }
