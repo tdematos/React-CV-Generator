@@ -5,8 +5,6 @@ import WorkExperience from "./Work Experience/WorkExperiece";
 import PrintButton from "./PrintButton/PrintButton";
 import "../ResumePage/ResumePage.css";
 
-import React from "react";
-
 const ResumePage = (props) => {
   return (
     <div className="pageBody">
