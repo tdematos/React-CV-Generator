@@ -2,7 +2,10 @@ import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import Education from "./Education/Education";
 import Experience from "./Experience/EdExperience";
 import WorkExperience from "./Work Experience/WorkExperiece";
+import PrintButton from "./PrintButton/PrintButton";
 import "../ResumePage/ResumePage.css";
+
+import React from "react";
 
 const ResumePage = (props) => {
   return (
@@ -29,6 +32,7 @@ const ResumePage = (props) => {
         jobTitle={props.jobTitle}
         jobDescription={props.jobDescription}
       />
+      <PrintButton text="Print" />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import "../Personal-Info/boxinfo.css";
+import "../Personal-Info/boxInfo.css";
 
 const JobDesc = ({ descriptionTitle, onChange }) => {
   return (
