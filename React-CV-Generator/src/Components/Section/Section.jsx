@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ResumePage from "../ResumePage/ResumePage";
 import FormSection from "../Form-Section/FormSection";
+import NavBar from "./NavBar";
 import "../Section/Section.css";
 
 const Section = () => {
@@ -85,7 +86,9 @@ const Section = () => {
 
   return (
     <>
-      <div className="section">hi</div>
+      <div className="section navSection">
+        <NavBar txt1="Content" txt2="Customize" />
+      </div>
       <div className="section formSection">
         <FormSection
           onNameChange={handleNameChange}
