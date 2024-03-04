@@ -19,6 +19,8 @@
 }
 
 .jobDescription {
+  display: flex;
+  justify-content: flex-start;
   position: relative;
-  right: 28px;
+  right: 85px;
 }

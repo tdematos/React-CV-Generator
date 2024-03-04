@@ -21,6 +21,12 @@
 
 .dateAndPlace {
   margin-left: 1.5rem;
+  width: 150px;
+}
+
+.date-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .schoolInfo {

@@ -5,8 +5,10 @@ const WorkInfo = (props) => {
     <div className="workSection">
       <div className="workInfo">
         <div className="dateAndPlace">
-          <p className="workDate">{props.workStartDate}</p>
-          <p className="workDate">{props.workEndDate}</p>
+          <div className="date-container">
+            <p className="workDate">{props.workStartDate}</p>
+            <p className="workDate">{props.workEndDate}</p>
+          </div>
           <p className="workLocation">{props.workLocation}</p>
         </div>
         <div className="jobInfo">
