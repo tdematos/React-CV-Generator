@@ -24,6 +24,7 @@ const Section = () => {
   const [workDescription, setWorkDescription] = useState(
     "Hello this is where I work."
   );
+  const [toggleContent, setToggleContent] = useState(true);
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -84,31 +85,48 @@ const Section = () => {
     setWorkDescription(e.target.value);
   };
 
+  const handleContentToggle = () => {
+    setToggleContent(true);
+  };
+
+  const handleCustomizeToggle = () => {
+    setToggleContent(false);
+  };
+
   return (
     <>
       <div className="section navSection">
-        <NavBar txt1="Content" txt2="Customize" />
+        <NavBar
+          txt1="Content"
+          txt2="Customize"
+          clickContentToggle={handleContentToggle}
+          clickCustomizeToggle={handleCustomizeToggle}
+        />
       </div>
       <div className="section formSection">
-        <FormSection
-          onNameChange={handleNameChange}
-          onEmailChange={handleEmailChange}
-          onPhoneChange={handlePhoneNumChange}
-          onLocationChange={handlelocationChange}
-          //functions for handling education input
-          onSchoolChange={handleSchoolNameChange}
-          onDegreeChange={handleDegreeChange}
-          onStartDateChange={handleStartDateChange}
-          onEndDateChange={handleEndDateChange}
-          onSchoolLocationChange={handleSchoolLocation}
-          //functions for hanfling work experience section
-          onWorkSDateChange={handleWorkSDateChange}
-          onWorkEDayChange={handleWorkEDateChange}
-          onWOrkLocationChange={handleWorkLocationChange}
-          onCompanyNameChange={handleWorkNameChange}
-          onJobTitleChange={handleJobTitleChange}
-          onJobDescriptionChange={handleJobDescriptionChange}
-        />
+        {toggleContent === true ? (
+          <FormSection
+            onNameChange={handleNameChange}
+            onEmailChange={handleEmailChange}
+            onPhoneChange={handlePhoneNumChange}
+            onLocationChange={handlelocationChange}
+            //functions for handling education input
+            onSchoolChange={handleSchoolNameChange}
+            onDegreeChange={handleDegreeChange}
+            onStartDateChange={handleStartDateChange}
+            onEndDateChange={handleEndDateChange}
+            onSchoolLocationChange={handleSchoolLocation}
+            //functions for hanfling work experience section
+            onWorkSDateChange={handleWorkSDateChange}
+            onWorkEDayChange={handleWorkEDateChange}
+            onWOrkLocationChange={handleWorkLocationChange}
+            onCompanyNameChange={handleWorkNameChange}
+            onJobTitleChange={handleJobTitleChange}
+            onJobDescriptionChange={handleJobDescriptionChange}
+          />
+        ) : (
+          <div>Coming Soon...</div>
+        )}
       </div>
       <div className="section resumePage">
         <ResumePage
