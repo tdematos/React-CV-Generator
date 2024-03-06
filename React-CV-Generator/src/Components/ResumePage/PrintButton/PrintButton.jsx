@@ -9,7 +9,7 @@ const PrintButton = (props) => {
 
   return (
     <>
-      <button className="print-button" onClick={handlePrint}>
+      <button className="print-button" onClick={props.onClick}>
         {props.text}
       </button>
     </>

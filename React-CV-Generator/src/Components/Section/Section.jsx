@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ResumePage from "../ResumePage/ResumePage";
 import FormSection from "../Form-Section/FormSection";
 import NavBar from "./NavBar";
+import CustomizeForm from "../Form-Section/CustomizeForm/CustomizeForm";
 import "../Section/Section.css";
 
 const Section = () => {
@@ -125,7 +126,7 @@ const Section = () => {
             onJobDescriptionChange={handleJobDescriptionChange}
           />
         ) : (
-          <div>Coming Soon...</div>
+          <CustomizeForm />
         )}
       </div>
       <div className="section resumePage">
