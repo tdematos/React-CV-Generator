@@ -50,6 +50,10 @@ const JobExperience = (props) => {
             descriptionTitle="Job Description"
             onChange={props.onJobDescriptionChange}
           />
+          <div className="button-container">
+            <button className="delete-button">Delete</button>
+            <button className="save-button">Save</button>
+          </div>
         </form>
       ) : null}
     </div>

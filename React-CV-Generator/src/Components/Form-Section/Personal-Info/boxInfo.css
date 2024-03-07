@@ -69,7 +69,7 @@
 .boxInfoContainer-Exp {
   background-color: white;
   width: 350px;
-  height: 470px;
+  height: 33rem;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
@@ -189,4 +189,44 @@
   position: relative;
   left: 15px;
   width: 120px;
+}
+
+.button-container {
+  position: relative;
+  left: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 85%;
+  height: 40px;
+  margin-top: 10px;
+}
+
+.delete-button {
+  color: grey;
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid grey;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: 700;
+}
+
+.delete-button:hover {
+  color: white;
+  background-color: grey;
+}
+
+.save-button {
+  color: white;
+  background-color: #187ff5;
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  font-weight: 700;
+}
+
+.save-button:hover {
+  background-color: #4f9ffb;
 }
