@@ -128,6 +128,18 @@
   cursor: pointer;
   color: lightgray;
 }
+/* Education experienec seciton */
+.boxInfoContainer-Ed-Exp {
+  background-color: white;
+  width: 350px;
+  height: 25rem;
+  border-radius: 15px;
+  margin-top: 30px;
+  box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 /* work experience box */
 .boxInfoContainer-Exp {
   background-color: white;

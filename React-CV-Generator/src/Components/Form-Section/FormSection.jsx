@@ -6,7 +6,13 @@ import ButtonControlComp from "./ButtonControlComp/ButtonControlComp";
 const FormSection = (props) => {
   return (
     <>
-      <ButtonControlComp />
+      <ButtonControlComp
+        addJob="+ Work"
+        onAddWorkClick={props.onAddWorkClick}
+        addEducation="+ Education"
+        reset="reset"
+        onResetButton={props.onResetButton}
+      />
       <PersonalInfo
         onNameChange={props.onNameChange}
         onEmailChange={props.onEmailChange}

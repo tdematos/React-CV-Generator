@@ -40,6 +40,7 @@ const ResumePage = (props) => {
           jobTitle={props.jobTitle}
           jobDescription={props.jobDescription}
         />
+        <div>{props.additonalWorkExperience}</div>
       </div>
       <PrintButton text="Print" onClick={handlePrint} />;
     </>

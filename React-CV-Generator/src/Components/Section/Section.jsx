@@ -3,6 +3,7 @@ import ResumePage from "../ResumePage/ResumePage";
 import FormSection from "../Form-Section/FormSection";
 import NavBar from "./NavBar";
 import CustomizeForm from "../Form-Section/CustomizeForm/CustomizeForm";
+import WorkInfo from "../ResumePage/WorkInfo/WorkInfo";
 import "../Section/Section.css";
 
 const Section = () => {
@@ -26,6 +27,7 @@ const Section = () => {
     "Hello this is where I work."
   );
   const [toggleContent, setToggleContent] = useState(true);
+  const [jobSections, setJobSections] = useState([]);
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -95,11 +97,27 @@ const Section = () => {
   };
 
   const handleDeleteClick = () => {
-    setWorkDescription("");
+    setWorkDescription("Test");
     setWEndDate("");
     setWStartDate("");
     setWorkTitle("");
     setJobName("");
+  };
+
+  const handleAddJobSection = () => {
+    if (jobSections.length < 2) {
+      setJobSections([
+        ...jobSections,
+        {
+          startDate: "1/21",
+          endDate: "12/1",
+          location: "Buffalo, NY",
+          companyName: "RedBull",
+          jobTitle: "Engineer",
+          jobDescription: "Does this really work?",
+        },
+      ]);
+    }
   };
 
   return (
@@ -133,6 +151,8 @@ const Section = () => {
             onJobTitleChange={handleJobTitleChange}
             onJobDescriptionChange={handleJobDescriptionChange}
             onDeleteClick={handleDeleteClick}
+            //Props for handling adding sections
+            onAddWorkClick={handleAddJobSection}
           />
         ) : (
           <CustomizeForm />
@@ -157,6 +177,17 @@ const Section = () => {
           companyName={jobName}
           jobTitle={workTitle}
           jobDescription={workDescription}
+          additonalWorkExperience={jobSections.map((jobSection, index) => (
+            <WorkInfo
+              key={index}
+              workStartDate={jobSection.startDate}
+              workEndDate={jobSection.endDate}
+              workLocation={jobSection.location}
+              jobName={jobSection.companyName}
+              jobTitle={jobSection.jobTitle}
+              jobDescription={jobSection.jobDescription}
+            />
+          ))}
         />
       </div>
     </>

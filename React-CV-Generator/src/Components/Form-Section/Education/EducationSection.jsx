@@ -17,7 +17,7 @@ const EducationSection = (props) => {
   return (
     <div
       className={
-        toggleEdMenu ? "boxInfoContainertwo-closed" : "boxInfoContainer-Exp"
+        toggleEdMenu ? "boxInfoContainertwo-closed" : "boxInfoContainer-Ed-Exp"
       }
     >
       <div className="edHeadingContainer">

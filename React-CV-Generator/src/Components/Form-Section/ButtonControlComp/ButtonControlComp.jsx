@@ -1,11 +1,15 @@
 import "../Personal-Info/boxInfo.css";
 
-const ButtonControlComp = () => {
+const ButtonControlComp = (props) => {
   return (
     <div className="control-buttons">
-      <button className="add-job-button">+ Work</button>
-      <button className="add-education-button">+ Education</button>
-      <button className="reset-button">Reset</button>
+      <button onClick={props.onAddWorkClick} className="add-job-button">
+        {props.addJob}
+      </button>
+      <button className="add-education-button">{props.addEducation}</button>
+      <button onClick={props.onResetButton} className="reset-button">
+        {props.reset}
+      </button>
     </div>
   );
 };
