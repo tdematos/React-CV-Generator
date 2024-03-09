@@ -94,6 +94,14 @@ const Section = () => {
     setToggleContent(false);
   };
 
+  const handleDeleteClick = () => {
+    setWorkDescription("");
+    setWEndDate("");
+    setWStartDate("");
+    setWorkTitle("");
+    setJobName("");
+  };
+
   return (
     <>
       <div className="section navSection">
@@ -124,6 +132,7 @@ const Section = () => {
             onCompanyNameChange={handleWorkNameChange}
             onJobTitleChange={handleJobTitleChange}
             onJobDescriptionChange={handleJobDescriptionChange}
+            onDeleteClick={handleDeleteClick}
           />
         ) : (
           <CustomizeForm />

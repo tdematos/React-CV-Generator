@@ -1,10 +1,12 @@
 import PersonalInfo from "./Personal-Info/PersonalInfo";
 import EducationSection from "./Education/EducationSection";
 import JobExperience from "./JobExperience/JobExperience";
+import ButtonControlComp from "./ButtonControlComp/ButtonControlComp";
 
 const FormSection = (props) => {
   return (
     <>
+      <ButtonControlComp />
       <PersonalInfo
         onNameChange={props.onNameChange}
         onEmailChange={props.onEmailChange}
@@ -25,6 +27,7 @@ const FormSection = (props) => {
         onWorkEDayChange={props.onWorkEDayChange}
         onWOrkLocationChange={props.onWOrkLocationChange}
         onJobDescriptionChange={props.onJobDescriptionChange}
+        onDeleteClick={props.onDeleteClick}
       />
     </>
   );
