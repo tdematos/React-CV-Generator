@@ -27,6 +27,7 @@ const FormSection = (props) => {
         onSchoolLocationChange={props.onSchoolLocationChange}
       />
       <JobExperience
+        workExperienceCount={props.workExperienceCount}
         onCompanyNameChange={props.onCompanyNameChange}
         onJobTitleChange={props.onJobTitleChange}
         onWorkSDateChange={props.onWorkSDateChange}
@@ -35,6 +36,19 @@ const FormSection = (props) => {
         onJobDescriptionChange={props.onJobDescriptionChange}
         onDeleteClick={props.onDeleteClick}
       />
+      {props.JobExperienceContainer.map((form, index) => (
+        <JobExperience
+          key={index}
+          workExperienceCount={index + 1}
+          onCompanyNameChange={(e) => props.onCompanyNameChange(e, index)}
+          onJobTitleChange={(e) => props.onJobTitleChange(e, index)}
+          onWorkSDateChange={(e) => props.onWorkSDateChange(e, index)}
+          onWorkEDayChange={(e) => props.onWorkEDayChange(e, index)}
+          onWOrkLocationChange={(e) => props.onWOrkLocationChange(e, index)}
+          onJobDescriptionChange={(e) => props.onJobDescriptionChange(e, index)}
+          onDeleteClick={(e) => props.onDeleteClick(e, index)}
+        />
+      ))}
     </>
   );
 };

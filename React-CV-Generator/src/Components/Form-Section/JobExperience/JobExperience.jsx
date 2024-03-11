@@ -21,7 +21,9 @@ const JobExperience = (props) => {
       }
     >
       <div className="edHeadingContainer">
-        <h2 className="boxHeading">Work Experience</h2>
+        <h2 className="boxHeading">
+          Work Experience {props.workExperienceCount}
+        </h2>
         <p onClick={handleClick} className="menuToggle">
           {toggleEdMenu ? "-" : "+"}
         </p>

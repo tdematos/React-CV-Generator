@@ -42,7 +42,7 @@ const ResumePage = (props) => {
         />
         <div>{props.additonalWorkExperience}</div>
       </div>
-      <PrintButton text="Print" onClick={handlePrint} />;
+      <PrintButton text="Print" onClick={handlePrint} />
     </>
   );
 };
