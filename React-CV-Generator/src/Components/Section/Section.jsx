@@ -106,21 +106,20 @@ const Section = () => {
   };
 
   const handleAddJobSection = () => {
-    if (jobFormSections.length < 2) {
-      setJobFormSections([
-        ...jobFormSections,
-        {
-          startDate: "1/21",
-          endDate: "12/1",
-          location: "Buffalo, NY",
-          companyName: "RedBull",
-          jobTitle: "Engineer",
-          jobDescription: "Does this really work?",
-        },
-      ]);
+    if (jobFormSections.length < 3) {
+      const newJobSection = {
+        startDate: "1/21",
+        endDate: "12/1",
+        location: "Buffalo, NY",
+        companyName: "RedBull",
+        jobTitle: "Engineer",
+        jobDescription: "Does this really work?",
+      };
+      const updatedJobFormSections = [...jobFormSections, newJobSection];
+      setJobFormSections(updatedJobFormSections);
+      console.log("Job Form Sections:", updatedJobFormSections);
     }
   };
-
   return (
     <>
       <div className="section navSection">
@@ -154,6 +153,8 @@ const Section = () => {
             onDeleteClick={handleDeleteClick}
             //Props for handling adding sections
             onAddWorkClick={handleAddJobSection}
+            jobFormSections={jobFormSections}
+            setJobFormSections={setJobFormSections}
             JobExperienceContainer={jobFormSections.map((form, index) => {
               <JobExperience
                 key={index}

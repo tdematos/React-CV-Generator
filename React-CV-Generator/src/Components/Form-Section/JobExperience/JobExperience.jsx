@@ -1,18 +1,19 @@
+import React, { useState } from "react";
 import "../Personal-Info/boxInfo.css";
 import FormInput from "../Personal-Info/Form-Input/FormInput";
-import { useState } from "react";
 import JobDesc from "./JobDesc";
 
 const JobExperience = (props) => {
   const [toggleEdMenu, setToggleEdMenu] = useState(true);
 
-  function handleClick(props) {
-    if (toggleEdMenu) {
-      setToggleEdMenu(false);
-    } else {
-      setToggleEdMenu(true);
-    }
-  }
+  const handleInputChange = (field, value) => {
+    const updatedJobSection = { ...props.jobSection, [field]: value };
+    props.onJobSectionChange(updatedJobSection);
+  };
+
+  const handleClick = () => {
+    setToggleEdMenu(!toggleEdMenu);
+  };
 
   return (
     <div
@@ -33,27 +34,40 @@ const JobExperience = (props) => {
         <form className="boxInfoForm">
           <FormInput
             fullNameTitle="Company Name"
-            onChange={props.onCompanyNameChange}
+            value={props.jobSection.companyName}
+            onChange={(e) => handleInputChange("companyName", e.target.value)}
           />
-          <FormInput fullNameTitle="Title" onChange={props.onJobTitleChange} />
+          <FormInput
+            fullNameTitle="Title"
+            value={props.jobSection.jobTitle}
+            onChange={(e) => handleInputChange("jobTitle", e.target.value)}
+          />
           <FormInput
             fullNameTitle="Start Date"
-            onChange={props.onWorkSDateChange}
+            value={props.jobSection.startDate}
+            onChange={(e) => handleInputChange("startDate", e.target.value)}
           />
           <FormInput
             fullNameTitle="End Date"
-            onChange={props.onWorkEDayChange}
+            value={props.jobSection.endDate}
+            onChange={(e) => handleInputChange("endDate", e.target.value)}
           />
           <FormInput
             fullNameTitle="Location"
-            onChange={props.onWOrkLocationChange}
+            value={props.jobSection.location}
+            onChange={(e) => handleInputChange("location", e.target.value)}
           />
           <JobDesc
             descriptionTitle="Job Description"
-            onChange={props.onJobDescriptionChange}
+            value={props.jobSection.jobDescription}
+            onChange={(e) =>
+              handleInputChange("jobDescription", e.target.value)
+            }
           />
           <div className="button-container">
-            <button className="delete-button">Delete</button>
+            <button className="delete-button" onClick={props.onDeleteClick}>
+              Delete
+            </button>
             <button className="save-button">Save</button>
           </div>
         </form>

@@ -1,9 +1,16 @@
+import React from "react";
+import ButtonControlComp from "./ButtonControlComp/ButtonControlComp";
 import PersonalInfo from "./Personal-Info/PersonalInfo";
 import EducationSection from "./Education/EducationSection";
 import JobExperience from "./JobExperience/JobExperience";
-import ButtonControlComp from "./ButtonControlComp/ButtonControlComp";
 
 const FormSection = (props) => {
+  const handleJobSectionChange = (updatedJobSection, index) => {
+    const updatedJobFormSections = [...props.jobFormSections];
+    updatedJobFormSections[index] = updatedJobSection;
+    props.setJobFormSections(updatedJobFormSections);
+  };
+
   return (
     <>
       <ButtonControlComp
@@ -26,27 +33,16 @@ const FormSection = (props) => {
         onEndDateChange={props.onEndDateChange}
         onSchoolLocationChange={props.onSchoolLocationChange}
       />
-      <JobExperience
-        workExperienceCount={props.workExperienceCount}
-        onCompanyNameChange={props.onCompanyNameChange}
-        onJobTitleChange={props.onJobTitleChange}
-        onWorkSDateChange={props.onWorkSDateChange}
-        onWorkEDayChange={props.onWorkEDayChange}
-        onWOrkLocationChange={props.onWOrkLocationChange}
-        onJobDescriptionChange={props.onJobDescriptionChange}
-        onDeleteClick={props.onDeleteClick}
-      />
-      {props.JobExperienceContainer.map((form, index) => (
+
+      {props.jobFormSections.map((form, index) => (
         <JobExperience
           key={index}
           workExperienceCount={index + 1}
-          onCompanyNameChange={(e) => props.onCompanyNameChange(e, index)}
-          onJobTitleChange={(e) => props.onJobTitleChange(e, index)}
-          onWorkSDateChange={(e) => props.onWorkSDateChange(e, index)}
-          onWorkEDayChange={(e) => props.onWorkEDayChange(e, index)}
-          onWOrkLocationChange={(e) => props.onWOrkLocationChange(e, index)}
-          onJobDescriptionChange={(e) => props.onJobDescriptionChange(e, index)}
-          onDeleteClick={(e) => props.onDeleteClick(e, index)}
+          jobSection={form}
+          onJobSectionChange={(updatedJobSection) =>
+            handleJobSectionChange(updatedJobSection, index)
+          }
+          onDeleteClick={() => props.onDeleteClick(index)}
         />
       ))}
     </>
