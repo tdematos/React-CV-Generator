@@ -1,7 +1,7 @@
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import Education from "./Education/Education";
 import Experience from "./Experience/EdExperience";
-import WorkExperience from "./Work Experience/WorkExperiece";
+// import WorkExperience from "./Work Experience/WorkExperiece";
 import PrintButton from "./PrintButton/PrintButton";
 import "../ResumePage/ResumePage.css";
 
@@ -32,15 +32,15 @@ const ResumePage = (props) => {
           degree={props.degree}
         />
         <Experience />
-        <WorkExperience
+        {/* <WorkExperience
           workStartDate={props.workStartDate}
           workEndDate={props.workEndDate}
           workLocation={props.workLocation}
           companyName={props.companyName}
           jobTitle={props.jobTitle}
           jobDescription={props.jobDescription}
-        />
-        <div>{props.additonalWorkExperience}</div>
+        /> */}
+        {props.additonalWorkExperience}
       </div>
       <PrintButton text="Print" onClick={handlePrint} />
     </>

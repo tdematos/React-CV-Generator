@@ -68,7 +68,9 @@ const JobExperience = (props) => {
             <button className="delete-button" onClick={props.onDeleteClick}>
               Delete
             </button>
-            <button className="save-button">Save</button>
+            <button className="save-button" onClick={props.onAddWorkSecion}>
+              Save
+            </button>
           </div>
         </form>
       ) : null}

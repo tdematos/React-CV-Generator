@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import CustomizeForm from "../Form-Section/CustomizeForm/CustomizeForm";
 // import WorkInfo from "../ResumePage/WorkInfo/WorkInfo";
 import JobExperience from "../Form-Section/JobExperience/JobExperience";
+import WorkExperience from "../ResumePage/Work Experience/WorkExperiece";
 import "../Section/Section.css";
 
 const Section = () => {
@@ -29,6 +30,7 @@ const Section = () => {
   );
   const [toggleContent, setToggleContent] = useState(true);
   const [jobFormSections, setJobFormSections] = useState([]);
+  const [resumeWorkSection, setResumeWorkSection] = useState("");
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -120,6 +122,11 @@ const Section = () => {
       console.log("Job Form Sections:", updatedJobFormSections);
     }
   };
+
+  const handleAddingWorkExperience = () => {
+    setResumeWorkSection(<WorkExperience />);
+  };
+
   return (
     <>
       <div className="section navSection">
@@ -164,6 +171,7 @@ const Section = () => {
                 jobName={form.companyName}
                 jobTitle={form.jobTitle}
                 jobDescription={form.jobDescription}
+                onClickAddWork={handleAddingWorkExperience}
               />;
             })}
           />
@@ -190,7 +198,7 @@ const Section = () => {
           companyName={jobName}
           jobTitle={workTitle}
           jobDescription={workDescription}
-          additonalWorkExperience={"Coming soon..."}
+          additonalWorkExperience={resumeWorkSection}
         />
       </div>
     </>
