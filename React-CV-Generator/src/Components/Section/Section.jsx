@@ -30,7 +30,7 @@ const Section = () => {
   );
   const [toggleContent, setToggleContent] = useState(true);
   const [jobFormSections, setJobFormSections] = useState([]);
-  const [resumeWorkSection, setResumeWorkSection] = useState("");
+  const [componentCount, setComponentCount] = useState(0);
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -110,12 +110,12 @@ const Section = () => {
   const handleAddJobSection = () => {
     if (jobFormSections.length < 3) {
       const newJobSection = {
-        startDate: "1/21",
-        endDate: "12/1",
-        location: "Buffalo, NY",
-        companyName: "RedBull",
-        jobTitle: "Engineer",
-        jobDescription: "Does this really work?",
+        startDate: "Test",
+        endDate: "",
+        location: "",
+        companyName: "",
+        jobTitle: "",
+        jobDescription: "",
       };
       const updatedJobFormSections = [...jobFormSections, newJobSection];
       setJobFormSections(updatedJobFormSections);
@@ -123,9 +123,14 @@ const Section = () => {
     }
   };
 
-  const handleAddingWorkExperience = () => {
-    setResumeWorkSection(<WorkExperience />);
+  const createComponent = () => {
+    setComponentCount(componentCount + 1);
   };
+
+  const components = [];
+  for (let i = 0; i < componentCount; i++) {
+    components.push(<WorkExperience key={i} />);
+  }
 
   return (
     <>
@@ -163,16 +168,18 @@ const Section = () => {
             jobFormSections={jobFormSections}
             setJobFormSections={setJobFormSections}
             JobExperienceContainer={jobFormSections.map((form, index) => {
-              <JobExperience
-                key={index}
-                workStartDate={form.startDate}
-                workEndDate={form.endDate}
-                workLocation={form.location}
-                jobName={form.companyName}
-                jobTitle={form.jobTitle}
-                jobDescription={form.jobDescription}
-                onClickAddWork={handleAddingWorkExperience}
-              />;
+              return (
+                <JobExperience
+                  key={index}
+                  workStartDate={form.startDate}
+                  workEndDate={form.endDate}
+                  workLocation={form.location}
+                  jobName={form.companyName}
+                  jobTitle={form.jobTitle}
+                  jobDescription={form.jobDescription}
+                  onClickAddWork={createComponent}
+                />
+              );
             })}
           />
         ) : (
@@ -198,7 +205,7 @@ const Section = () => {
           companyName={jobName}
           jobTitle={workTitle}
           jobDescription={workDescription}
-          additonalWorkExperience={resumeWorkSection}
+          additonalWorkExperience={components}
         />
       </div>
     </>

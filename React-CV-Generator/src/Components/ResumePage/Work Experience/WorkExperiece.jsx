@@ -4,9 +4,6 @@ import WorkInfo from "../WorkInfo/WorkInfo";
 const WorkExperience = (props) => {
   return (
     <div className="workSection">
-      <div className="titleBackground">
-        <Title sectionTitle="Work Experience" />
-      </div>
       <WorkInfo
         workStartDate={props.workStartDate}
         workEndDate={props.workEndDate}

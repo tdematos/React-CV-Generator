@@ -1,6 +1,7 @@
 import ResumeHeader from "./ResumeHeader/ResumeHeader";
 import Education from "./Education/Education";
 import Experience from "./Experience/EdExperience";
+import Title from "../ResumePage/Title/Title";
 // import WorkExperience from "./Work Experience/WorkExperiece";
 import PrintButton from "./PrintButton/PrintButton";
 import "../ResumePage/ResumePage.css";
@@ -32,6 +33,7 @@ const ResumePage = (props) => {
           degree={props.degree}
         />
         <Experience />
+        <Title sectionTitle="Work Experience" />
         {/* <WorkExperience
           workStartDate={props.workStartDate}
           workEndDate={props.workEndDate}

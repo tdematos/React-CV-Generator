@@ -15,6 +15,10 @@ const JobExperience = (props) => {
     setToggleEdMenu(!toggleEdMenu);
   };
 
+  const handleAlertClick = (index) => {
+    alert("this works!");
+  };
+
   return (
     <div
       className={
@@ -30,7 +34,7 @@ const JobExperience = (props) => {
         </p>
       </div>
 
-      {toggleEdMenu ? (
+      {toggleEdMenu && (
         <form className="boxInfoForm">
           <FormInput
             fullNameTitle="Company Name"
@@ -65,15 +69,23 @@ const JobExperience = (props) => {
             }
           />
           <div className="button-container">
-            <button className="delete-button" onClick={props.onDeleteClick}>
+            <button
+              className="delete-button"
+              type="button"
+              onClick={handleAlertClick}
+            >
               Delete
             </button>
-            <button className="save-button" onClick={props.onAddWorkSecion}>
+            <button
+              className="save-button"
+              type="button"
+              onClick={() => props.onSaveClick(index)}
+            >
               Save
             </button>
           </div>
         </form>
-      ) : null}
+      )}
     </div>
   );
 };
