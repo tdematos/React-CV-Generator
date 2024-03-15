@@ -8,7 +8,7 @@ const WorkExperience = (props) => {
         workStartDate={props.workStartDate}
         workEndDate={props.workEndDate}
         workLocation={props.workLocation}
-        jobName={props.companyName}
+        jobName={props.jobName}
         jobTitle={props.jobTitle}
         jobDescription={props.jobDescription}
       />

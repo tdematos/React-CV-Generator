@@ -8,6 +8,7 @@ import "../ResumePage/ResumePage.css";
 
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
+import WorkExperience from "./Work Experience/WorkExperiece";
 
 const ResumePage = (props) => {
   const componentRef = useRef();
@@ -34,15 +35,30 @@ const ResumePage = (props) => {
         />
         <Experience />
         <Title sectionTitle="Work Experience" />
-        {/* <WorkExperience
-          workStartDate={props.workStartDate}
-          workEndDate={props.workEndDate}
-          workLocation={props.workLocation}
-          companyName={props.companyName}
-          jobTitle={props.jobTitle}
-          jobDescription={props.jobDescription}
-        /> */}
-        {props.additonalWorkExperience}
+        <WorkExperience
+          workStartDate=""
+          workEndDate=""
+          workLocation=""
+          jobName=""
+          jobTitle=""
+          jobDescription=""
+        />
+        <WorkExperience
+          workStartDate=""
+          workEndDate=""
+          workLocation=""
+          jobName=""
+          jobTitle=""
+          jobDescription=""
+        />
+        <WorkExperience
+          workStartDate=""
+          workEndDate=""
+          workLocation=""
+          jobName=""
+          jobTitle=""
+          jobDescription=""
+        />
       </div>
       <PrintButton text="Print" onClick={handlePrint} />
     </>

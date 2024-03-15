@@ -30,7 +30,7 @@ const Section = () => {
   );
   const [toggleContent, setToggleContent] = useState(true);
   const [jobFormSections, setJobFormSections] = useState([]);
-  const [componentCount, setComponentCount] = useState(0);
+  const [workComponent, setWorkComponent] = useState("");
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -123,14 +123,9 @@ const Section = () => {
     }
   };
 
-  const createComponent = () => {
-    setComponentCount(componentCount + 1);
+  const handleWorkComponent = () => {
+    setWorkComponent(<WorkExperience />);
   };
-
-  const components = [];
-  for (let i = 0; i < componentCount; i++) {
-    components.push(<WorkExperience key={i} />);
-  }
 
   return (
     <>
@@ -177,7 +172,7 @@ const Section = () => {
                   jobName={form.companyName}
                   jobTitle={form.jobTitle}
                   jobDescription={form.jobDescription}
-                  onClickAddWork={createComponent}
+                  onSaveClick={handleWorkComponent}
                 />
               );
             })}
@@ -205,7 +200,6 @@ const Section = () => {
           companyName={jobName}
           jobTitle={workTitle}
           jobDescription={workDescription}
-          additonalWorkExperience={components}
         />
       </div>
     </>
