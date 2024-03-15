@@ -1,4 +1,3 @@
-import Title from "../Title/Title";
 import WorkInfo from "../WorkInfo/WorkInfo";
 
 const WorkExperience = (props) => {

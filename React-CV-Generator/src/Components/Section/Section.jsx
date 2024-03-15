@@ -8,7 +8,7 @@ import JobExperience from "../Form-Section/JobExperience/JobExperience";
 import WorkExperience from "../ResumePage/Work Experience/WorkExperiece";
 import "../Section/Section.css";
 
-const Section = () => {
+const Section = (props) => {
   const [nameInput, setNameInput] = useState("Enter full-name");
   const [emailInput, setEmailInput] = useState("name@email.com");
   const [phoneNumInput, setPhoneNumInput] = useState("111.222.3333");
@@ -30,7 +30,6 @@ const Section = () => {
   );
   const [toggleContent, setToggleContent] = useState(true);
   const [jobFormSections, setJobFormSections] = useState([]);
-  const [workComponent, setWorkComponent] = useState("");
 
   const handleNameChange = (e) => {
     setNameInput(e.target.value);
@@ -110,7 +109,7 @@ const Section = () => {
   const handleAddJobSection = () => {
     if (jobFormSections.length < 3) {
       const newJobSection = {
-        startDate: "Test",
+        startDate: "",
         endDate: "",
         location: "",
         companyName: "",
@@ -121,10 +120,6 @@ const Section = () => {
       setJobFormSections(updatedJobFormSections);
       console.log("Job Form Sections:", updatedJobFormSections);
     }
-  };
-
-  const handleWorkComponent = () => {
-    setWorkComponent(<WorkExperience />);
   };
 
   return (
@@ -172,7 +167,7 @@ const Section = () => {
                   jobName={form.companyName}
                   jobTitle={form.jobTitle}
                   jobDescription={form.jobDescription}
-                  onSaveClick={handleWorkComponent}
+                  // onSaveClick={handleWorkComponent}
                 />
               );
             })}
@@ -200,6 +195,18 @@ const Section = () => {
           companyName={jobName}
           jobTitle={workTitle}
           jobDescription={workDescription}
+          //components for work experience component
+          workExperienceArea={jobFormSections.map((form, index) => {
+            <WorkExperience
+              key={index}
+              workStartDate={form.startDate}
+              workEndDate={form.endDate}
+              workLocation={form.location}
+              jobName={form.companyName}
+              jobTitle={form.jobTitle}
+              jobDescription={form.jobDescription}
+            />;
+          })}
         />
       </div>
     </>

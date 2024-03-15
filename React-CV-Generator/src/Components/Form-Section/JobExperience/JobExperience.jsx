@@ -15,7 +15,7 @@ const JobExperience = (props) => {
     setToggleEdMenu(!toggleEdMenu);
   };
 
-  const handleAlertClick = (index) => {
+  const handleAlertClick = () => {
     alert("this works!");
   };
 
@@ -75,13 +75,6 @@ const JobExperience = (props) => {
               onClick={handleAlertClick}
             >
               Delete
-            </button>
-            <button
-              className="save-button"
-              type="button"
-              onClick={() => props.onSaveClick(index)}
-            >
-              Save
             </button>
           </div>
         </form>

@@ -35,30 +35,7 @@ const ResumePage = (props) => {
         />
         <Experience />
         <Title sectionTitle="Work Experience" />
-        <WorkExperience
-          workStartDate=""
-          workEndDate=""
-          workLocation=""
-          jobName=""
-          jobTitle=""
-          jobDescription=""
-        />
-        <WorkExperience
-          workStartDate=""
-          workEndDate=""
-          workLocation=""
-          jobName=""
-          jobTitle=""
-          jobDescription=""
-        />
-        <WorkExperience
-          workStartDate=""
-          workEndDate=""
-          workLocation=""
-          jobName=""
-          jobTitle=""
-          jobDescription=""
-        />
+        {props.workExperienceArea}
       </div>
       <PrintButton text="Print" onClick={handlePrint} />
     </>
