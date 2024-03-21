@@ -3,7 +3,7 @@ import ResumePage from "../ResumePage/ResumePage";
 import FormSection from "../Form-Section/FormSection";
 import NavBar from "./NavBar";
 import CustomizeForm from "../Form-Section/CustomizeForm/CustomizeForm";
-// import WorkInfo from "../ResumePage/WorkInfo/WorkInfo";
+
 import JobExperience from "../Form-Section/JobExperience/JobExperience";
 import WorkExperience from "../ResumePage/Work Experience/WorkExperiece";
 import "../Section/Section.css";
@@ -20,14 +20,6 @@ const Section = (props) => {
   const [endDate, setEndDate] = useState("12/01");
   const [schoolLocation, setSchoolLocation] = useState("Cambridge, MA");
   //useState for work section
-  const [wStartDate, setWStartDate] = useState("1/23");
-  const [wEndDate, setWEndDate] = useState("12/23");
-  const [wLocation, setWLocation] = useState("Boston, MA");
-  const [jobName, setJobName] = useState("Google");
-  const [workTitle, setWorkTitle] = useState("Software Engineer");
-  const [workDescription, setWorkDescription] = useState(
-    "Hello this is where I work."
-  );
   const [toggleContent, setToggleContent] = useState(true);
   const [jobFormSections, setJobFormSections] = useState([]);
 
@@ -65,30 +57,7 @@ const Section = (props) => {
   const handleSchoolLocation = (e) => {
     setSchoolLocation(e.target.value);
   };
-  //functions for setting handling input for work seciton
-  const handleWorkNameChange = (e) => {
-    setJobName(e.target.value);
-  };
-
-  const handleJobTitleChange = (e) => {
-    setWorkTitle(e.target.value);
-  };
-
-  const handleWorkSDateChange = (e) => {
-    setWStartDate(e.target.value + " - ");
-  };
-
-  const handleWorkEDateChange = (e) => {
-    setWEndDate(e.target.value);
-  };
-
-  const handleWorkLocationChange = (e) => {
-    setWLocation(e.target.value);
-  };
-
-  const handleJobDescriptionChange = (e) => {
-    setWorkDescription(e.target.value);
-  };
+  //functions for handling menu toggle
 
   const handleContentToggle = () => {
     setToggleContent(true);
@@ -99,11 +68,7 @@ const Section = (props) => {
   };
 
   const handleDeleteClick = () => {
-    setWorkDescription("Test");
-    setWEndDate("");
-    setWStartDate("");
-    setWorkTitle("");
-    setJobName("");
+    console.log("Test");
   };
 
   const handleAddJobSection = () => {
@@ -146,17 +111,10 @@ const Section = (props) => {
             onEndDateChange={handleEndDateChange}
             onSchoolLocationChange={handleSchoolLocation}
             //functions for hanfling work experience section
-            onWorkSDateChange={handleWorkSDateChange}
-            onWorkEDayChange={handleWorkEDateChange}
-            onWOrkLocationChange={handleWorkLocationChange}
-            onCompanyNameChange={handleWorkNameChange}
-            onJobTitleChange={handleJobTitleChange}
-            onJobDescriptionChange={handleJobDescriptionChange}
             onDeleteClick={handleDeleteClick}
             //Props for handling adding sections
-            onAddWorkClick={handleAddJobSection}
+            onAddWorkClick={handleAddJobSection} //button for adding section
             jobFormSections={jobFormSections}
-            setJobFormSections={setJobFormSections}
             JobExperienceContainer={jobFormSections.map((form, index) => {
               return (
                 <JobExperience
@@ -167,7 +125,6 @@ const Section = (props) => {
                   jobName={form.companyName}
                   jobTitle={form.jobTitle}
                   jobDescription={form.jobDescription}
-                  // onSaveClick={handleWorkComponent}
                 />
               );
             })}
@@ -188,25 +145,18 @@ const Section = (props) => {
           schoolLocation={schoolLocation}
           schoolName={schoolInput}
           degree={degreeInput}
-          //imput for work experience
-          workStartDate={wStartDate}
-          workEndDate={wEndDate}
-          workLocation={wLocation}
-          companyName={jobName}
-          jobTitle={workTitle}
-          jobDescription={workDescription}
           //components for work experience component
-          workExperienceArea={jobFormSections.map((form, index) => {
+          workExperienceArea={jobFormSections.map((input, index) => (
             <WorkExperience
               key={index}
-              workStartDate={form.startDate}
-              workEndDate={form.endDate}
-              workLocation={form.location}
-              jobName={form.companyName}
-              jobTitle={form.jobTitle}
-              jobDescription={form.jobDescription}
-            />;
-          })}
+              workStartDate={input.startDate}
+              workEndDate={input.endDate}
+              workLocation={input.location}
+              jobName={input.companyName}
+              jobTitle={input.jobTitle}
+              jobDescription={input.jobDescription}
+            />
+          ))}
         />
       </div>
     </>

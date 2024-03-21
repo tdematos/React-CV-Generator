@@ -35,7 +35,17 @@ const ResumePage = (props) => {
         />
         <Experience />
         <Title sectionTitle="Work Experience" />
-        {props.workExperienceArea}
+        {props.workExperienceArea.map((input, index) => (
+          <WorkExperience
+            key={index}
+            workStartDate={props.startDate}
+            workEndDate={props.endDate}
+            workLocation={props.location}
+            jobName={props.companyName}
+            jobTitle={props.jobTitle}
+            jobDescription={props.jobDescription}
+          />
+        ))}
       </div>
       <PrintButton text="Print" onClick={handlePrint} />
     </>
