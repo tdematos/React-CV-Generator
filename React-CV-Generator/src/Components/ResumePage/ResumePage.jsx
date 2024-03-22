@@ -8,7 +8,6 @@ import "../ResumePage/ResumePage.css";
 
 import React, { useRef } from "react";
 import { useReactToPrint } from "react-to-print";
-import WorkExperience from "./Work Experience/WorkExperiece";
 
 const ResumePage = (props) => {
   const componentRef = useRef();
@@ -35,17 +34,7 @@ const ResumePage = (props) => {
         />
         <Experience />
         <Title sectionTitle="Work Experience" />
-        {props.workExperienceArea.map((input, index) => (
-          <WorkExperience
-            key={index}
-            workStartDate={props.startDate}
-            workEndDate={props.endDate}
-            workLocation={props.location}
-            jobName={props.companyName}
-            jobTitle={props.jobTitle}
-            jobDescription={props.jobDescription}
-          />
-        ))}
+        <div>{props.workExperienceSection}</div>
       </div>
       <PrintButton text="Print" onClick={handlePrint} />
     </>

@@ -146,17 +146,19 @@ const Section = (props) => {
           schoolName={schoolInput}
           degree={degreeInput}
           //components for work experience component
-          workExperienceArea={jobFormSections.map((input, index) => (
-            <WorkExperience
-              key={index}
-              workStartDate={input.startDate}
-              workEndDate={input.endDate}
-              workLocation={input.location}
-              jobName={input.companyName}
-              jobTitle={input.jobTitle}
-              jobDescription={input.jobDescription}
-            />
-          ))}
+          workExperienceSection={jobFormSections.map((form, index) => {
+            return (
+              <WorkExperience
+                key={index}
+                workStartDate="{form.startDate}"
+                workEndDate={form.endDate}
+                workLocation={form.location}
+                jobName={form.companyName}
+                jobTitle={form.jobTitle}
+                jobDescription={form.jobDescription}
+              />
+            );
+          })}
         />
       </div>
     </>
