@@ -6,9 +6,8 @@ import JobExperience from "./JobExperience/JobExperience";
 
 const FormSection = (props) => {
   const handleJobSectionChange = (updatedJobSection, index) => {
-    const updatedJobFormSections = [...props.jobFormSections];
-    updatedJobFormSections[index] = updatedJobSection;
-    props.setJobFormSections(updatedJobFormSections);
+    // Call the function passed from the parent component to update the state
+    props.setJobFormSections(index, updatedJobSection);
   };
 
   return (

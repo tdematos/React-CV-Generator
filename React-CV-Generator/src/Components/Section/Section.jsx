@@ -87,6 +87,12 @@ const Section = (props) => {
     }
   };
 
+  const handleJobSectionUpdate = (index, updatedSection) => {
+    const updatedSections = [...jobFormSections];
+    updatedSections[index] = updatedSection;
+    setJobFormSections(updatedSections);
+  };
+
   return (
     <>
       <div className="section navSection">
@@ -115,6 +121,7 @@ const Section = (props) => {
             //Props for handling adding sections
             onAddWorkClick={handleAddJobSection} //button for adding section
             jobFormSections={jobFormSections}
+            setJobFormSections={handleJobSectionUpdate}
             JobExperienceContainer={jobFormSections.map((form, index) => {
               return (
                 <JobExperience
@@ -150,7 +157,7 @@ const Section = (props) => {
             return (
               <WorkExperience
                 key={index}
-                workStartDate="{form.startDate}"
+                workStartDate={form.startDate}
                 workEndDate={form.endDate}
                 workLocation={form.location}
                 jobName={form.companyName}
