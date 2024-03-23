@@ -1,4 +1,5 @@
 import FormInput from "./Form-Input/FormInput";
+import { FaPersonCircleCheck } from "react-icons/fa6";
 import "../Personal-Info/boxInfo.css";
 import { useState } from "react";
 
@@ -20,7 +21,9 @@ const PersonalInfo = (props) => {
       }
     >
       <div className="edHeadingContainer">
-        <h2 className="boxHeading">Personal Information</h2>
+        <h2 className="boxHeading">
+          <FaPersonCircleCheck /> Personal Information
+        </h2>
         <p onClick={handleClick} className="menuToggle">
           {toggleEdMenu ? "-" : "+"}
         </p>

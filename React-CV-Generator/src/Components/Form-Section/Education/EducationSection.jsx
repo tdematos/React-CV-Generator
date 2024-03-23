@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import FormInput from "../Personal-Info/Form-Input/FormInput";
 import "../Personal-Info/boxInfo.css";
+import { GiGraduateCap } from "react-icons/gi";
 
 const EducationSection = (props) => {
   const [toggleEdMenu, setToggleEdMenu] = useState(true);
@@ -21,7 +22,10 @@ const EducationSection = (props) => {
       }
     >
       <div className="edHeadingContainer">
-        <h2 className="boxHeading">Education</h2>
+        <h2 className="boxHeading">
+          <GiGraduateCap />
+          Education
+        </h2>
         <p onClick={handleClick} className="menuToggle">
           {toggleEdMenu ? "+" : "-"}
         </p>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "../Personal-Info/boxInfo.css";
 import FormInput from "../Personal-Info/Form-Input/FormInput";
+import { MdWork } from "react-icons/md";
+
 import JobDesc from "./JobDesc";
 
 const JobExperience = (props) => {
@@ -27,6 +29,7 @@ const JobExperience = (props) => {
     >
       <div className="edHeadingContainer">
         <h2 className="boxHeading">
+          <MdWork />
           Work Experience {props.workExperienceCount}
         </h2>
         <p onClick={handleClick} className="menuToggle">

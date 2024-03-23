@@ -1,5 +1,7 @@
 .nameSection {
   background-color: rgb(126, 157, 168);
+  width: 100%;
+  height: 8rem;
   margin: 0;
   display: flex;
   flex-direction: column;
