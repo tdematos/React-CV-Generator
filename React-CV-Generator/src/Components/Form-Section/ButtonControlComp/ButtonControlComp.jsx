@@ -1,4 +1,5 @@
 import "../Personal-Info/boxInfo.css";
+import { useState } from "react";
 
 const ButtonControlComp = (props) => {
   return (
