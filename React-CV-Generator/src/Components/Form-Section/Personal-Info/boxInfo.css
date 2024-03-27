@@ -12,7 +12,7 @@
 }
 
 .add-job-button {
-  width: 80px;
+  width: 140px;
   height: 40px;
   color: grey;
   background-color: white;
@@ -25,9 +25,10 @@
 
 .add-job-button:hover {
   background-color: rgb(245, 253, 245);
+  color: green;
 }
 
-.add-education-button {
+/* .add-education-button {
   width: 120px;
   height: 40px;
   color: grey;
@@ -38,14 +39,14 @@
   padding-right: 15px;
   font-weight: 700;
   margin-left: 15px;
-}
+} */
 
-.add-education-button:hover {
+/* .add-education-button:hover {
   background-color: rgb(245, 253, 245);
-}
+} */
 
 .reset-button {
-  width: 70px;
+  width: 140px;
   height: 40px;
   color: rgb(255, 255, 255);
   background-color: rgb(202, 65, 65);

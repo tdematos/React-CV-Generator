@@ -15,7 +15,6 @@ const FormSection = (props) => {
       <ButtonControlComp
         addJob="+ Work"
         onAddWorkClick={props.onAddWorkClick}
-        addEducation="+ Education"
         reset="reset"
         onResetButton={props.onResetButton}
       />
