@@ -16,8 +16,8 @@ const Section = (props) => {
   //useState for education section
   const [schoolInput, setSchoolInput] = useState("Harvard");
   const [degreeInput, setDegreeInput] = useState("Computer Science");
-  const [startDate, setStartDate] = useState("01/21");
-  const [endDate, setEndDate] = useState("12/01");
+  const [startDate, setStartDate] = useState("01/21 ");
+  const [endDate, setEndDate] = useState(" - 12/01");
   const [schoolLocation, setSchoolLocation] = useState("Cambridge, MA");
   //useState for work section
   const [toggleContent, setToggleContent] = useState(true);
@@ -93,6 +93,21 @@ const Section = (props) => {
     setJobFormSections(updatedSections);
   };
 
+  //function for pressing the reset button
+  const handleResetClick = () => {
+    setNameInput("Enter full-name");
+    setEmailInput("name@email.com");
+    setPhoneNumInput("111.222.3333");
+    setlocationAdd("London, Uk");
+    setSchoolInput("Harvard");
+    setDegreeInput("Computer Science");
+    setStartDate("1/24");
+    setEndDate(" -12/1");
+    setSchoolLocation("Cambridge, MA");
+
+    setJobFormSections([]);
+  };
+
   return (
     <>
       <div className="section navSection">
@@ -122,6 +137,8 @@ const Section = (props) => {
             onAddWorkClick={handleAddJobSection} //button for adding section
             jobFormSections={jobFormSections}
             setJobFormSections={handleJobSectionUpdate}
+            // function to toggle reset button
+            onResetButton={handleResetClick}
             JobExperienceContainer={jobFormSections.map((form, index) => {
               return (
                 <JobExperience
