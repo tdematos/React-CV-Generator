@@ -64,7 +64,7 @@
 .boxInfoContainer {
   background-color: white;
   width: 350px;
-  height: 350px;
+  height: 380px;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
@@ -75,6 +75,7 @@
 
 .boxHeading {
   margin-left: 20px;
+  font-size: 1.3rem;
 }
 
 .boxInfoForm {
@@ -90,7 +91,7 @@
 .boxInfoContainertwo {
   background-color: white;
   width: 350px;
-  height: 410px;
+  height: 480px;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
@@ -132,7 +133,7 @@
 .boxInfoContainer-Ed-Exp {
   background-color: white;
   width: 350px;
-  height: 25rem;
+  height: 28rem;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
@@ -144,7 +145,7 @@
 .boxInfoContainer-Exp {
   background-color: white;
   width: 350px;
-  height: 33rem;
+  height: 36rem;
   border-radius: 15px;
   margin-top: 30px;
   box-shadow: 0px 0px 40px 1px rgb(224, 224, 224);
@@ -222,7 +223,7 @@
 }
 
 .form-title {
-  font-size: 25px;
+  font-size: 45px;
   margin-bottom: 10px;
   margin-top: 10px;
 }
@@ -305,4 +306,8 @@
 
 .save-button:hover {
   background-color: #4f9ffb;
+}
+
+.box-icon {
+  margin-right: 5px;
 }

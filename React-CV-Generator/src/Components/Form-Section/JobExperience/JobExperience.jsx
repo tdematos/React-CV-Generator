@@ -29,7 +29,7 @@ const JobExperience = (props) => {
     >
       <div className="edHeadingContainer">
         <h2 className="boxHeading">
-          <MdWork />
+          <MdWork className="box-icon" />
           Work Experience {props.workExperienceCount}
         </h2>
         <p onClick={handleClick} className="menuToggle">

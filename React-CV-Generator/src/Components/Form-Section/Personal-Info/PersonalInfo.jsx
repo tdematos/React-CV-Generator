@@ -22,7 +22,7 @@ const PersonalInfo = (props) => {
     >
       <div className="edHeadingContainer">
         <h2 className="boxHeading">
-          <FaPersonCircleCheck /> Personal Information
+          <FaPersonCircleCheck className="box-icon" /> Personal Information
         </h2>
         <p onClick={handleClick} className="menuToggle">
           {toggleEdMenu ? "-" : "+"}

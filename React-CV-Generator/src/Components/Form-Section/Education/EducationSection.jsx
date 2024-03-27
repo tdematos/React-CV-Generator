@@ -23,7 +23,7 @@ const EducationSection = (props) => {
     >
       <div className="edHeadingContainer">
         <h2 className="boxHeading">
-          <GiGraduateCap />
+          <GiGraduateCap className="box-icon" />
           Education
         </h2>
         <p onClick={handleClick} className="menuToggle">
