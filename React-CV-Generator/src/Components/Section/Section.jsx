@@ -112,6 +112,16 @@ const Section = (props) => {
     <>
       <div className="section navSection">
         <NavBar
+          contentStyle={
+            toggleContent
+              ? { backgroundColor: "#f5f5f5", borderRadius: "15px" }
+              : { backgroundColor: "white" }
+          }
+          customizeStyle={
+            !toggleContent
+              ? { backgroundColor: "#f5f5f5", borderRadius: "15px" }
+              : { backgroundColor: "white" }
+          }
           txt1="Content"
           txt2="Customize"
           clickContentToggle={handleContentToggle}
